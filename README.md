@@ -227,51 +227,51 @@ wave作成
 
 # 2番以降は繰り返しです
 
-    # バッキングはまだ上手くいっていないのでお手柔らかに
+バッキングはまだ上手くいっていないのでお手柔らかに
 
-#backing_notes = [
-    #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
-    #('As2', QUATER), ('As2', QUATER), ('Ds2', QUATER), ('Ds2', QUATER),
-    # ドドファファシsシsミsミs ざんこくなてんしのように
+    #backing_notes = [
+        #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
+        #('As2', QUATER), ('As2', QUATER), ('Ds2', QUATER), ('Ds2', QUATER),
+        # ドドファファシsシsミsミs ざんこくなてんしのように
 
-    #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
-    #('As2', QUATER), ('As2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER),
-    # ドドファファシsシsソsソsソsソs しょうねんよしんわになれ
+        #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
+        #('As2', QUATER), ('As2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER),
+        # ドドファファシsシsソsソsソsソs しょうねんよしんわになれ
 
-    #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
-    #('As2', EIGHTH), ('As2', EIGHTH), ('Ds2', EIGHTH), ('Ds2', EIGHTH),
+        #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
+        #('As2', EIGHTH), ('As2', EIGHTH), ('Ds2', EIGHTH), ('Ds2', EIGHTH),
     
 
-    #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
-    #('As2', EIGHTH), ('As2', EIGHTH), ('Gs2', EIGHTH), ('Gs2', EIGHTH),
+        #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
+        #('As2', EIGHTH), ('As2', EIGHTH), ('Gs2', EIGHTH), ('Gs2', EIGHTH),
 
-    #('Ds2', EIGHTH), ('Ds2', EIGHTH), ('Ds2',EIGHTH), ('Ds2', EIGHTH), 
-    #('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH),
-    # ミsミsミsミsシsシsシsシs あおいかぜがいま
+        #('Ds2', EIGHTH), ('Ds2', EIGHTH), ('Ds2',EIGHTH), ('Ds2', EIGHTH), 
+        #('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH),
+        # ミsミsミsミsシsシsシsシs あおいかぜがいま
 
-    #('C3', EIGHTH), ('C3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH),
-    #('Gs3', EIGHTH), ('Gs3', EIGHTH), #('Gs3', EIGHTH), ('Gs3', EIGHTH),
-    # ドドシsシsソsソsソsソs むねのどあをたたいても
+        #('C3', EIGHTH), ('C3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH),
+        #('Gs3', EIGHTH), ('Gs3', EIGHTH), #('Gs3', EIGHTH), ('Gs3', EIGHTH),
+        # ドドシsシsソsソsソsソs むねのどあをたたいても
 
-    #('E3', EIGHTH), ('Gs3', EIGHTH), ('B3',EIGHTH), ('E3', EIGHTH), ('A3', EIGHTH), ('B3',EIGHTH), ('C4', EIGHTH), ('A3', EIGHTH),
+        #('E3', EIGHTH), ('Gs3', EIGHTH), ('B3',EIGHTH), ('E3', EIGHTH), ('A3', EIGHTH), ('B3',EIGHTH), ('C4', EIGHTH), ('A3', EIGHTH),
 
-    #('Fs3', EIGHTH), ('A3', EIGHTH), ('D4', EIGHTH), ('D3', EIGHTH), ('G3', EIGHTH), ('D3',EIGHTH), ('G3', QUATER),
+        #('Fs3', EIGHTH), ('A3', EIGHTH), ('D4', EIGHTH), ('D3', EIGHTH), ('G3', EIGHTH), ('D3',EIGHTH), ('G3', QUATER),
 
-    #('E3', EIGHTH), ('Cs3', EIGHTH), ('A2',EIGHTH), ('A2', EIGHTH), ('D3', EIGHTH), ('E3',EIGHTH), ('F3', EIGHTH), ('D3', EIGHTH),
+        #('E3', EIGHTH), ('Cs3', EIGHTH), ('A2',EIGHTH), ('A2', EIGHTH), ('D3', EIGHTH), ('E3',EIGHTH), ('F3', EIGHTH), ('D3', EIGHTH),
 
-    #('G3', QUATER), ('G3', QUATER), ('A3', EIGHTH), ('G2', EIGHTH), ('A3', EIGHTH),
+        #('G3', QUATER), ('G3', QUATER), ('A3', EIGHTH), ('G2', EIGHTH), ('A3', EIGHTH),
 
-    #('G3', QUATER), ('A2', QUATER), ('D3', EIGHTH), ('C3', EIGHTH), ('B2', QUATER),
+        #('G3', QUATER), ('A2', QUATER), ('D3', EIGHTH), ('C3', EIGHTH), ('B2', QUATER),
 
-    #('F3', EIGHTH + SIXTEENTH), ('F3', EIGHTH + SIXTEENTH), ('E3', EIGHTH + SIXTEENTH), 
-    #('D3', EIGHTH), ('F3', EIGHTH), ('A3', EIGHTH), ('C4', EIGHTH),
-    #('G3', QUATER), ('G3', QUATER), ('C4', QUATER + QUATER)
-#]
+        #('F3', EIGHTH + SIXTEENTH), ('F3', EIGHTH + SIXTEENTH), ('E3', EIGHTH + SIXTEENTH), 
+        #('D3', EIGHTH), ('F3', EIGHTH), ('A3', EIGHTH), ('C4', EIGHTH),
+        #('G3', QUATER), ('G3', QUATER), ('C4', QUATER + QUATER)
+    #]
 
-#backing_wave = np.hstack([generate_note(tone, value) for tone, value in backing_notes])
-#Eva_back_audio = IPython.display.Audio(backing_wave, rate=BIT_RATE)
-#IPython.display.display(Eva_back_audio)
+    #backing_wave = np.hstack([generate_note(tone, value) for tone, value in backing_notes])
+    #Eva_back_audio = IPython.display.Audio(backing_wave, rate=BIT_RATE)
+    #IPython.display.display(Eva_back_audio)
 
-#%%
-#Eva_wave = np.vstack((melody_wave, backing_wave)) # メロディとバッキングを合わせる、音の長さが同じでないとエラー
-#IPython.display.Audio(Eva_wave, rate=BIT_RATE)
+
+    #Eva_wave = np.vstack((melody_wave, backing_wave)) # メロディとバッキングを合わせる、音の長さが同じでないとエラー
+    #IPython.display.Audio(Eva_wave, rate=BIT_RATE)
