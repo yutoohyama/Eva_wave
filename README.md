@@ -96,7 +96,7 @@ g3v2 = generate_note('G3',QUATER * 2)
 c_triad_chord = np.vstack((c3v2, e3v2, g3v2))
 IPython.display.Audio(c_triad_chord, rate=BIT_RATE)
 
-# 残酷な天使のテーゼ~エヴァンゲリオン~
+# 残酷な天使のテーゼ～エヴァンゲリオン～
 #%%
 melody_notes = [
     ('C4', QUATER), ('Ds4', QUATER), ('F4', EIGHTH + SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), ('F4', EIGHTH),
