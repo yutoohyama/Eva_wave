@@ -3,9 +3,8 @@ wave作成
 参照したサイト「Numpyで奏でるクリスマスソング　https://qiita.com/TatchNicolas/items/fb4064a7f394b977765e　」 を元にwaveを作成していく。
 以下コード
 
-#%%
 
-        # とりあえず音を鳴らしてみる
+# とりあえず音を鳴らしてみる
 
     import numpy as np
     import IPython.display 
@@ -21,59 +20,56 @@ wave作成
     sample_A3 = np.sin(A3 * 2 * np.pi * np.linspace(0, duration, duration * BIT_RATE))
     IPython.display.Audio(sample_A3, rate=BIT_RATE)
 
-#%%
 
-ratios = [2 ** (i / 12) for i in range(0, 13)]
-tone_names = ['A3', 'As3', 'B3', 'C4', 'Cs4', 'D4', 'Ds4', 'E4', 'F4', 'Fs4', 'G4', 'Gs4','A4' ]
+        ratios = [2 ** (i / 12) for i in range(0, 13)]
+        tone_names = ['A3', 'As3', 'B3', 'C4', 'Cs4', 'D4', 'Ds4', 'E4', 'F4', 'Fs4', 'G4', 'Gs4','A4' ]
 
-TONE_DICT = {}
+        TONE_DICT = {}
 
-    # A3からA4のクロマチックスケール
+            # A3からA4のクロマチックスケール
     
-for ratio, tone_name in zip(ratios, tone_names):
-    duration = 1
-    frequency = ratio * A3
-    tmp_sound = np.sin(frequency * 2 * np.pi * np.linspace(0, duration, duration * BIT_RATE))
-    audio=IPython.display.Audio(tmp_sound, rate=BIT_RATE)
+        for ratio, tone_name in zip(ratios, tone_names):
+            duration = 1
+            frequency = ratio * A3
+            tmp_sound = np.sin(frequency * 2 * np.pi * np.linspace(0, duration, duration * BIT_RATE))
+            audio=IPython.display.Audio(tmp_sound, rate=BIT_RATE)
 
-    # あとで使えるように辞書に周波数を入れとく
-    TONE_DICT[tone_name] = frequency
-    # Jupyter上に表示
-    print(f'tone_name:{tone_name}, frequency: {frequency}')
-    IPython.display.display(audio)
+            # あとで使えるように辞書に周波数を入れとく
+            TONE_DICT[tone_name] = frequency
+            # Jupyter上に表示
+            print(f'tone_name:{tone_name}, frequency: {frequency}')
+            IPython.display.display(audio)
 
-#%%
 
-    # 1オクターブ上、1オクターブ下、2 オクターブ下も作る
+            # 1オクターブ上、1オクターブ下、2 オクターブ下も作る
 
-    # さきほどの1オクターブ分の周波数を作る処理を関数化
+            # さきほどの1オクターブ分の周波数を作る処理を関数化
 
-def generate_octave(start, tone_names):
-    dict_to_return = {}
-    for ratio, tone_name in zip(ratios, tone_names):
-        frequency = ratio * start
-        dict_to_return[tone_name] = frequency
-    return dict_to_return
+        def generate_octave(start, tone_names):
+            dict_to_return = {}
+            for ratio, tone_name in zip(ratios, tone_names):
+                frequency = ratio * start
+                dict_to_return[tone_name] = frequency
+            return dict_to_return
 
-    # A2からA3のクロマチックスケール
+            # A2からA3のクロマチックスケール
 
-tone_names_a2_a3 = [ 'A2', 'As2', 'B2', 'C3', 'Cs3', 'D3', 'Ds3', 'E3', 'F3', 'Fs3', 'G3', 'Gs3', 'A3']
-a2_a3 = generate_octave(TONE_DICT['A3'] / 2, tone_names_a2_a3)  # 基準音(440Hz)の半分の周波数 = 1オクターブ下の音から始める
-TONE_DICT.update(a2_a3)
+        tone_names_a2_a3 = [ 'A2', 'As2', 'B2', 'C3', 'Cs3', 'D3', 'Ds3', 'E3', 'F3', 'Fs3', 'G3', 'Gs3', 'A3']
+        a2_a3 = generate_octave(TONE_DICT['A3'] / 2, tone_names_a2_a3)  # 基準音(440Hz)の半分の周波数 = 1オクターブ下の音から始める
+        TONE_DICT.update(a2_a3)
 
-    # A1からA2のクロマチックスケール
+            # A1からA2のクロマチックスケール
 
-tone_names_a1_a2 = [ 'A1', 'As1', 'B1','C2', 'Cs2', 'D2', 'Ds2', 'E2', 'F2', 'Fs2', 'G2', 'Gs2', 'A2']
-a1_a2 = generate_octave(TONE_DICT['A3'] / 4, tone_names_a1_a2)  # 基準音(440Hz)の1/4周波数 = 2オクターブ下の音から始める
-TONE_DICT.update(a1_a2)
+        tone_names_a1_a2 = [ 'A1', 'As1', 'B1','C2', 'Cs2', 'D2', 'Ds2', 'E2', 'F2', 'Fs2', 'G2', 'Gs2', 'A2']
+        a1_a2 = generate_octave(TONE_DICT['A3'] / 4, tone_names_a1_a2)  # 基準音(440Hz)の1/4周波数 = 2オクターブ下の音から始める
+        TONE_DICT.update(a1_a2)
 
-    # A4からA5のクロマチックスケール
+            # A4からA5のクロマチックスケール
 
-tone_names_a4_a5 = [ 'A4', 'As4', 'B4','C5', 'Cs5', 'D5', 'Ds5', 'E5', 'F5', 'Fs5', 'G5', 'Gs5', 'A5']
-a4_a5 = generate_octave(TONE_DICT['A3'] * 2, tone_names_a4_a5)  # 基準音(440Hz)の4倍の周波数 = 2オクターブ上の音から始める
-TONE_DICT.update(a4_a5)
+        tone_names_a4_a5 = [ 'A4', 'As4', 'B4','C5', 'Cs5', 'D5', 'Ds5', 'E5', 'F5', 'Fs5', 'G5', 'Gs5', 'A5']
+        a4_a5 = generate_octave(TONE_DICT['A3'] * 2, tone_names_a4_a5)  # 基準音(440Hz)の4倍の周波数 = 2オクターブ上の音から始める
+        TONE_DICT.update(a4_a5)
 
-#%%
 
     # 音価(音の長さ)をつくる
 
