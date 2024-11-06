@@ -5,21 +5,21 @@ wave作成
 
 #%%
 
-    とりあえず音を鳴らしてみる
+        # とりあえず音を鳴らしてみる
 
-import numpy as np
-import IPython.display 
+    import numpy as np
+    import IPython.display 
 
-BIT_RATE = 44100
-concert_pitch = 220
+    BIT_RATE = 44100
+    concert_pitch = 220
 
-A3 = concert_pitch 
+    A3 = concert_pitch 
 
-    # ピアノでいう、いわゆる「ラ」の音
+        # ピアノでいう、いわゆる「ラ」の音
 
-duration = 3
-sample_A3 = np.sin(A3 * 2 * np.pi * np.linspace(0, duration, duration * BIT_RATE))
-IPython.display.Audio(sample_A3, rate=BIT_RATE)
+    duration = 3
+    sample_A3 = np.sin(A3 * 2 * np.pi * np.linspace(0, duration, duration * BIT_RATE))
+    IPython.display.Audio(sample_A3, rate=BIT_RATE)
 
 #%%
 
