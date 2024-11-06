@@ -212,7 +212,8 @@ Eva3_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
 IPython.display.display(Eva3_audio)
 
 #%%
-backing_notes = [
+#バッキングの方はまだ上手くいってない
+#backing_notes = [
     #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
     #('As2', QUATER), ('As2', QUATER), ('Ds2', QUATER), ('Ds2', QUATER),
     # ドドファファシsシsミsミs ざんこくなてんしのように
@@ -221,12 +222,12 @@ backing_notes = [
     #('As2', QUATER), ('As2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER), ('Gs2', QUATER),
     # ドドファファシsシsソsソsソsソs しょうねんよしんわになれ
 
-    ('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
-    ('As2', EIGHTH), ('As2', EIGHTH), ('Ds2', EIGHTH), ('Ds2', EIGHTH),
+    #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
+    #('As2', EIGHTH), ('As2', EIGHTH), ('Ds2', EIGHTH), ('Ds2', EIGHTH),
     
 
-    ('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
-    ('As2', EIGHTH), ('As2', EIGHTH), ('Gs2', EIGHTH), ('Gs2', EIGHTH),
+    #('C3', EIGHTH), ('C3', EIGHTH), ('F2', EIGHTH), ('F2', EIGHTH), 
+    #('As2', EIGHTH), ('As2', EIGHTH), ('Gs2', EIGHTH), ('Gs2', EIGHTH),
 
     #('Ds2', EIGHTH), ('Ds2', EIGHTH), ('Ds2',EIGHTH), ('Ds2', EIGHTH), 
     #('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH), ('As3', EIGHTH),
@@ -249,15 +250,15 @@ backing_notes = [
     #('F3', EIGHTH + SIXTEENTH), ('F3', EIGHTH + SIXTEENTH), ('E3', EIGHTH + SIXTEENTH), 
     #('D3', EIGHTH), ('F3', EIGHTH), ('A3', EIGHTH), ('C4', EIGHTH),
     #('G3', QUATER), ('G3', QUATER), ('C4', QUATER + QUATER)
-]
+#]
 
-backing_wave = np.hstack([generate_note(tone, value) for tone, value in backing_notes])
-Eva_back_audio = IPython.display.Audio(backing_wave, rate=BIT_RATE)
-IPython.display.display(Eva_back_audio)
+#backing_wave = np.hstack([generate_note(tone, value) for tone, value in backing_notes])
+#Eva_back_audio = IPython.display.Audio(backing_wave, rate=BIT_RATE)
+#IPython.display.display(Eva_back_audio)
 
 #%%
-Eva_wave = np.vstack((melody_wave, backing_wave)) # メロディとバッキングを合わせる、音の長さが同じでないとエラー
-IPython.display.Audio(Eva_wave, rate=BIT_RATE)
+#Eva_wave = np.vstack((melody_wave, backing_wave)) # メロディとバッキングを合わせる、音の長さが同じでないとエラー
+#IPython.display.Audio(Eva_wave, rate=BIT_RATE)
 
 #%%
 # 参照したサイト「Numpyで奏でるクリスマスソング（https://qiita.com/TatchNicolas/items/fb4064a7f394b977765e）」 
