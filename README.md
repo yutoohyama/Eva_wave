@@ -163,71 +163,71 @@ wave作成
     Eva1_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
     IPython.display.display(Eva1_audio)
 
-# 長さの関係でいったん区切る
+# 長さの関係で一旦区切る
 
-melody_notes = [
-    ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
-    ('F4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH), ('D4', SIXTEENTH + SIXTEENTH/2), ('C4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
-    # ミsミsレミsミsレファファミsレドレ だけどいつかきづくでしょう
+    melody_notes = [
+        ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('Ds4', SIXTEENTH +     SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
+        ('F4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH), ('D4', SIXTEENTH + SIXTEENTH/2), ('C4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
+        # ミsミsレミsミsレファファミsレドレ だけどいつかきづくでしょう
 
-    ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH + SIXTEENTH/2), ('C4', SIXTEENTH), ('As3', QUATER + QUATER),
-    # ミsミsレファレドシs そのせなかには
+        ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH + SIXTEENTH/2), ('C4', SIXTEENTH), ('As3', QUATER + QUATER),
+        # ミsミsレファレドシs そのせなかには
 
-    ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
-    ('F4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),('D4', SIXTEENTH + SIXTEENTH/2),('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
-    # ミsミsレミsミsレファファミsレミsファ はるかみらいめざすための 
+        ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
+        ('F4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),('D4', SIXTEENTH + SIXTEENTH/2),('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
+        # ミsミsレミsミsレファファミsレミsファ はるかみらいめざすための 
 
-    ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), 
-    ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', QUATER + QUATER),
-    # ソラsソファミsファソ はねがあること
+        ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), 
+        ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', QUATER + QUATER),
+        # ソラsソファミsファソ はねがあること
 
-    ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
-    ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
-    # ドミsファミsファファファシsラsソファソ ざんこくなてんしのてーぜ 
+        ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
+        ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
+        # ドミsファミsファファファシsラsソファソ ざんこくなてんしのてーぜ 
 
-    ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH), ('D4', SIXTEENTH), 
-    ('D4', SIXTEENTH), ('C4', SIXTEENTH), ('D4', SIXTEENTH), ('F4', SIXTEENTH/2), ('Ds4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH/2), 
-    # ソシsドファミsレレドレファミsミs まどべからやがてとびたつ
+        ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH), ('D4', SIXTEENTH), 
+        ('D4', SIXTEENTH), ('C4', SIXTEENTH), ('D4', SIXTEENTH), ('F4', SIXTEENTH/2), ('Ds4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH/2), 
+        # ソシsドファミsレレドレファミsミs まどべからやがてとびたつ
     
-    ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
-    ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
-    # ドミsファミsファファファシsラsソファソ ほとばしるあついぱとすで
+        ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
+        ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
+        # ドミsファミsファファファシsラsソファソ ほとばしるあついぱとすで
     
-    ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
-    ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', EIGHTH + SIXTEENTH/2),
-    # ソシsドファミsシsシsソシsシsド おもいでをうらぎるなら
+        ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
+        ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', EIGHTH + SIXTEENTH/2),
+        # ソシsドファミsシsシsソシsシsド おもいでをうらぎるなら
     
-    ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
-    ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
-    # ドミsファミsファファファシsラsソファソ このそらをだいてとびたつ
+        ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
+        ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
+        # ドミsファミsファファファシsラsソファソ このそらをだいてとびたつ
     
-    ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
-    ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', QUATER) 
-    # ソシsドファミsシsシsソシsシsド しょうねんよしんわになれ  
+        ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
+        ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', QUATER) 
+        # ソシsドファミsシsシsソシsシsド しょうねんよしんわになれ  
 
-]
+    ]
 
-melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
-Eva2_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
-IPython.display.display(Eva2_audio)
+    melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
+    Eva2_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
+    IPython.display.display(Eva2_audio)
 
-#%%
+# 一応サビも
 
-melody_notes = [
-('G4', EIGHTH), ('F4', EIGHTH), ('C5', QUATER), ('C5', QUATER + QUATER), 
-('G4', EIGHTH), ('F4', EIGHTH), ('C5', EIGHTH + SIXTEENTH), ('As4', QUATER + QUATER),
-    # ファリヤーセタメソ ソファドソファドシs
-('G4', EIGHTH), ('F4', EIGHTH), ('C5', QUATER + EIGHTH), ('As4', EIGHTH), ('D5', QUATER + QUATER)
-    # ファリヤートゥセー ソファドシsレ
-]
+    melody_notes = [
+    ('G4', EIGHTH), ('F4', EIGHTH), ('C5', QUATER), ('C5', QUATER + QUATER), 
+    ('G4', EIGHTH), ('F4', EIGHTH), ('C5', EIGHTH + SIXTEENTH), ('As4', QUATER + QUATER),
+        # ファリヤーセタメソ ソファドソファドシs
+    ('G4', EIGHTH), ('F4', EIGHTH), ('C5', QUATER + EIGHTH), ('As4', EIGHTH), ('D5', QUATER + QUATER)
+        # ファリヤートゥセー ソファドシsレ
+    ]
 
-melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
-Eva3_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
-IPython.display.display(Eva3_audio)
+    melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
+    Eva3_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
+    IPython.display.display(Eva3_audio)
 
-#%%
+# 2番以降は繰り返しです
 
-    # バッキングはまだ上手くいっていない
+    # バッキングはまだ上手くいっていないのでお手柔らかに
 
 #backing_notes = [
     #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
