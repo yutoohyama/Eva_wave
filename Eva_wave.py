@@ -258,3 +258,6 @@ IPython.display.display(Eva_back_audio)
 #%%
 Eva_wave = np.vstack((melody_wave, backing_wave)) # メロディとバッキングを合わせる、音の長さが同じでないとエラー
 IPython.display.Audio(Eva_wave, rate=BIT_RATE)
+
+#%%
+# 参照したサイト「Numpyで奏でるクリスマスソング（https://qiita.com/TatchNicolas/items/fb4064a7f394b977765e）」 
