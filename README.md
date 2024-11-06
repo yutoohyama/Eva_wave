@@ -5,7 +5,7 @@ wave作成
 
 #%%
 
-    <!--とりあえず音を鳴らしてみる-->
+    とりあえず音を鳴らしてみる
 
 import numpy as np
 import IPython.display 
