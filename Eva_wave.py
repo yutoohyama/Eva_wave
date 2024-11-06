@@ -212,7 +212,6 @@ Eva3_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
 IPython.display.display(Eva3_audio)
 
 #%%
-#バッキングの方はまだ上手くいってない
 #backing_notes = [
     #('C3', QUATER), ('C3', QUATER), ('F2', QUATER), ('F2', QUATER), 
     #('As2', QUATER), ('As2', QUATER), ('Ds2', QUATER), ('Ds2', QUATER),
