@@ -43,7 +43,7 @@ wave作成
 
             # 1オクターブ上、1オクターブ下、2 オクターブ下も作る
 
-            # さきほどの1オクターブ分の周波数を作る処理を関数化
+# さきほどの1オクターブ分の周波数を作る処理を関数化
 
         def generate_octave(start, tone_names):
             dict_to_return = {}
@@ -71,102 +71,99 @@ wave作成
         TONE_DICT.update(a4_a5)
 
 
-    # 音価(音の長さ)をつくる
+# 音価(音の長さ)をつくる
 
-QUATER = 1/2
-EIGHTH =  QUATER / 2
-SIXTEENTH =  EIGHTH / 2
+    QUATER = 1/2
+    EIGHTH =  QUATER / 2
+    SIXTEENTH =  EIGHTH / 2
 
 
-    # 周波数と音価からsin波として音を作る関数
-def generate_note(frequency, note_value):
-    one_sec_note = np.sin(TONE_DICT[frequency] * 2 * np.pi * np.linspace(0, 2, 2 * BIT_RATE))
-    return one_sec_note[0:int(len(one_sec_note) * note_value)]
+# 周波数と音価からsin波として音を作る関数
+    def generate_note(frequency, note_value):
+        one_sec_note = np.sin(TONE_DICT[frequency] * 2 * np.pi * np.linspace(0, 2, 2 * BIT_RATE))
+        return one_sec_note[0:int(len(one_sec_note) * note_value)]
 
-#%%
 
-    # 配列を結合する = 音を楽譜で横に並べる = メロディ
 
-c3v4 = generate_note('C3', QUATER)
-d3v4 = generate_note('D3', QUATER)
-e3v4 = generate_note('E3', QUATER)
-f3v4 = generate_note('F3', QUATER)
+# 配列を結合する = 音を楽譜で横に並べる = メロディ
 
-frog = np.hstack((c3v4, d3v4, e3v4, f3v4, e3v4, d3v4, c3v4))
-IPython.display.Audio(frog, rate=BIT_RATE)
+    c3v4 = generate_note('C3', QUATER)
+    d3v4 = generate_note('D3', QUATER)
+    e3v4 = generate_note('E3', QUATER)
+    f3v4 = generate_note('F3', QUATER)
 
-#%%
+    frog = np.hstack((c3v4, d3v4, e3v4, f3v4, e3v4, d3v4, c3v4))
+    IPython.display.Audio(frog, rate=BIT_RATE)
 
-    # 配列の和 = 音を楽譜で縦に並べる = ハーモニー
 
-c3v2 = generate_note('C3', QUATER * 2)
-e3v2 = generate_note('E3', QUATER * 2)
-g3v2 = generate_note('G3',QUATER * 2)
+# 配列の和 = 音を楽譜で縦に並べる = ハーモニー
 
-c_triad_chord = np.vstack((c3v2, e3v2, g3v2))
-IPython.display.Audio(c_triad_chord, rate=BIT_RATE)
+    c3v2 = generate_note('C3', QUATER * 2)
+    e3v2 = generate_note('E3', QUATER * 2)
+    g3v2 = generate_note('G3',QUATER * 2)
+
+    c_triad_chord = np.vstack((c3v2, e3v2, g3v2))
+    IPython.display.Audio(c_triad_chord, rate=BIT_RATE)
 
 # 残酷な天使のテーゼ～エヴァンゲリオン～
 
-#%%
-
-melody_notes = [
-    ('C4', QUATER), ('Ds4', QUATER), ('F4', EIGHTH + SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), ('F4', EIGHTH),
-    # ドミsファミsファ ざんこくな
-    ('F4', EIGHTH), ('F4', EIGHTH), ('As4', EIGHTH), ('Gs4', EIGHTH), ('G4', SIXTEENTH), ('F4', EIGHTH), ('G4', QUATER + SIXTEENTH),
-    # ファファシsラSソファソ てんしのように
-    ('G4', QUATER), ('As4', QUATER), ('C5', EIGHTH + SIXTEENTH), ('F4', EIGHTH + SIXTEENTH), ('Ds4', EIGHTH),
-    # ソシsドファミs しょうねんよ 
-    ('As4', EIGHTH), ('As4', EIGHTH),('G4', EIGHTH), ('As4', EIGHTH), ('As4', EIGHTH + SIXTEENTH), ('C5', QUATER) , ('C5', QUATER) , ('C5', QUATER), 
-    # シsシsソシsシsド しんわになれ
+    melody_notes = [
+        ('C4', QUATER), ('Ds4', QUATER), ('F4', EIGHTH + SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), ('F4', EIGHTH),
+        # ドミsファミsファ ざんこくな
+        ('F4', EIGHTH), ('F4', EIGHTH), ('As4', EIGHTH), ('Gs4', EIGHTH), ('G4', SIXTEENTH), ('F4', EIGHTH), ('G4', QUATER + SIXTEENTH),
+        # ファファシsラSソファソ てんしのように
+        ('G4', QUATER), ('As4', QUATER), ('C5', EIGHTH + SIXTEENTH), ('F4', EIGHTH + SIXTEENTH), ('Ds4', EIGHTH),
+        # ソシsドファミs しょうねんよ 
+        ('As4', EIGHTH), ('As4', EIGHTH),('G4', EIGHTH), ('As4', EIGHTH), ('As4', EIGHTH + SIXTEENTH), ('C5', QUATER) , ('C5', QUATER) , ('C5', QUATER), 
+        # シsシsソシsシsド しんわになれ
     
-    ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
+        ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
     
-    ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
+        ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
     
-    ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
+        ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
     
-    ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', QUATER), 
+        ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', QUATER), 
     
          
-    ('Ds4', SIXTEENTH), ('As3',SIXTEENTH/2), ('As3', EIGHTH + SIXTEENTH),
-    ('Ds4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('As3', SIXTEENTH), ('As3', EIGHTH + SIXTEENTH),
-    # ミsシsシsミsミsファシsシs あおいかぜがいま
-    ('As3', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2),
-    ('F4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('C4', EIGHTH + SIXTEENTH),
-    # シsソラsソファミsファソラsソド むねのどあをたたいても
+        ('Ds4', SIXTEENTH), ('As3',SIXTEENTH/2), ('As3', EIGHTH + SIXTEENTH),
+        ('Ds4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('As3', SIXTEENTH), ('As3', EIGHTH + SIXTEENTH),
+        # ミsシsシsミsミsファシsシs あおいかぜがいま
+        ('As3', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2),
+        ('F4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('C4', EIGHTH + SIXTEENTH),
+        # シsソラsソファミsファソラsソド むねのどあをたたいても
 
-    ('C4', SIXTEENTH/2), ('D4', SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('D4', EIGHTH + SIXTEENTH), 
-    ('Ds4', SIXTEENTH/2), ('F4', SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), 
-    # ドレミsミsレレミsファラsソファミs わたしだけをただみつめて
+        ('C4', SIXTEENTH/2), ('D4', SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('D4', EIGHTH + SIXTEENTH), 
+        ('Ds4', SIXTEENTH/2), ('F4', SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), 
+        # ドレミsミsレレミsファラsソファミs わたしだけをただみつめて
 
-    ('G4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('E4', SIXTEENTH), ('F4', EIGHTH), 
-    ('C4', EIGHTH), ('C4', EIGHTH + SIXTEENTH), ('D4', SIXTEENTH), ('D4', QUATER + EIGHTH),
-    # ソソファミファドドレレ ほほえんでるあなた
+        ('G4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('E4', SIXTEENTH), ('F4', EIGHTH), 
+        ('C4', EIGHTH), ('C4', EIGHTH + SIXTEENTH), ('D4', SIXTEENTH), ('D4', QUATER + EIGHTH),
+        # ソソファミファドドレレ ほほえんでるあなた
 
-    ('Ds4', SIXTEENTH), ('As3',SIXTEENTH/2), ('As3', EIGHTH + SIXTEENTH),
-    ('Ds4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('As3', SIXTEENTH), ('As3', EIGHTH + SIXTEENTH),
-    # ミsシsシsシsミsミsファシsシs そっとふれるもの
+        ('Ds4', SIXTEENTH), ('As3',SIXTEENTH/2), ('As3', EIGHTH + SIXTEENTH),
+        ('Ds4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('As3', SIXTEENTH), ('As3', EIGHTH + SIXTEENTH),
+        # ミsシsシsシsミsミsファシsシs そっとふれるもの
 
-    ('As3', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2),
-    ('F4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('C4', EIGHTH + SIXTEENTH),
-    # シsソラsソファミsファソラsソド もとめることにむちゅうで
+        ('As3', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2),
+        ('F4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH), ('C4', EIGHTH + SIXTEENTH),
+        # シsソラsソファミsファソラsソド もとめることにむちゅうで
 
-    ('C4', SIXTEENTH/2), ('D4', SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('D4', EIGHTH + SIXTEENTH), 
-    ('Ds4', SIXTEENTH/2), ('F4', SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), 
-    # ドレミsミsレレミsファラsソファミs うんめいさえまだしらない 
+        ('C4', SIXTEENTH/2), ('D4', SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('D4', EIGHTH + SIXTEENTH), 
+        ('Ds4', SIXTEENTH/2), ('F4', SIXTEENTH/2), ('Gs4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH), ('Ds4', EIGHTH + SIXTEENTH), 
+        # ドレミsミsレレミsファラsソファミs うんめいさえまだしらない 
 
-    ('G4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('E4', SIXTEENTH), 
-    ('F4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH), ('G4', QUATER + QUATER),
-    # ソソファミファソラsソ いたいけなひとみ 
+        ('G4', SIXTEENTH), ('G4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('E4', SIXTEENTH), 
+        ('F4', SIXTEENTH + SIXTEENTH/2), ('G4', SIXTEENTH + SIXTEENTH/2), ('Gs4', SIXTEENTH), ('G4', QUATER + QUATER),
+        # ソソファミファソラsソ いたいけなひとみ 
 
-]
+    ]
 
-melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
-Eva1_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
-IPython.display.display(Eva1_audio)
+    melody_wave = np.hstack([generate_note(tone, value) for tone, value in melody_notes])
+    Eva1_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
+    IPython.display.display(Eva1_audio)
 
-#%%
+# 長さの関係でいったん区切る
 
 melody_notes = [
     ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('D4', SIXTEENTH),
