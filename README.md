@@ -211,7 +211,7 @@ wave作成
     Eva2_audio = IPython.display.Audio(melody_wave, rate=BIT_RATE)
     IPython.display.display(Eva2_audio)
 
-# 一応サビも
+# 一応間奏も
 
     melody_notes = [
     ('G4', EIGHTH), ('F4', EIGHTH), ('C5', QUATER), ('C5', QUATER + QUATER), 
