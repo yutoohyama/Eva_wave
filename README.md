@@ -199,7 +199,7 @@ wave作成
     
         ('C4', EIGHTH), ('Ds4', EIGHTH), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH),
         ('F4', SIXTEENTH), ('F4', SIXTEENTH), ('As4', SIXTEENTH), ('Gs4', SIXTEENTH), ('G4', SIXTEENTH/2), ('F4', SIXTEENTH), ('G4', EIGHTH + SIXTEENTH/2),
-        # ドミsファミsファファファシsラsソファソ このそらをだいてとびたつ
+        # ドミsファミsファファファシsラsソファソ このそらをだいてかがやく
     
         ('G4', EIGHTH), ('As4', EIGHTH), ('C5', SIXTEENTH + SIXTEENTH/2), ('F4', SIXTEENTH + SIXTEENTH/2), ('Ds4', SIXTEENTH),
         ('As4', SIXTEENTH), ('As4', SIXTEENTH),('G4', SIXTEENTH), ('As4', SIXTEENTH), ('As4', SIXTEENTH + SIXTEENTH/2), ('C5', QUATER) 
